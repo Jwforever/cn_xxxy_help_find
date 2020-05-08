@@ -1,0 +1,13 @@
+<!--pages/bind-number/index.wxml-->
+<import src="../../templates/navigation/navigation.wxml" />
+<template is="navigationStyle" data="{{...navigation}}"></template>
+
+<view class="page">
+  <view class="page_body">
+    <view class="form-control">
+    <input id="s_number" auto-focus  placeholder="请输入学号" type="number" maxlength="12" bindinput="getNumber"/>
+    <!---未输入进禁用按钮-->
+    <button class="btn" bindtap="handIn" disabled="{{buttonStatus}}">提交</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "mp-cells": "../components/cells/cells",
+    "mp-cell": "../components/cell/cell"
+  },
+  "navigationBarBackgroundColor": "#FFCE58",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#fff"
+}

@@ -1,0 +1,3 @@
+<!--pages/notification/index.wxml-->
+<import src="../../templates/navigation/navigation" />
+<template is="navigationStyle" data="{{...navigation}}" />

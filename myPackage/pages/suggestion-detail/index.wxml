@@ -1,0 +1,49 @@
+<!--pages/suggestion-detail/index.wxml-->
+<import src="../../../templates/navigation/navigation.wxml"/>
+<template is="navigationStyle" data="{{...navigation}}"></template>
+
+<wxs src="../../../common/timeFormat.wxs" module="timeTools"></wxs>
+<view class="page" style="height:{{pageHeight}}px">
+
+  <!--头像以及基本信息显示-->
+  <view class="page-hd">
+    <view class="info">
+      <view class="info-content">
+        <!--用户头像-->
+        <view class="user-image"><image src="{{user.userImage}}"></image></view>
+        <!--用户名以及发布时间-->
+        <view class="usernameAndTime"> 
+          <view class="user-name">{{user.nickName}}</view>
+          <view class="publishedTime">{{timeTools. timestampToTime(suggestion.suggestion.createdTime)}}</view>
+        </view>
+      </view>
+      <!--额外的操作-->
+      <view class="anthor-operate">
+      ...
+      </view>
+    </view>
+  </view>
+  <!--内容区域-->
+  <view class="page-bd">
+    <view class="content">
+      <view class="suggestion">
+        {{suggestion.suggestion.suggestion}}
+      </view>
+      <!--用for循环显示图片-->
+      <view class="images">
+        <view class="image"  wx:for="{{suggestion.images}}"><image src="{{basePath}}{{item}}"></image></view>
+      </view>
+    </view>
+  </view>
+  <view class="page-ft">
+    <!--回复-->
+    <view class="response" hidden="{{footer.responseHide}}" wx:if="{{suggestion.suggestion.reply!=null}}">
+      <view class="response-name" >技术回复：</view>
+      <view class="response-content">{{suggestion.suggestion.reply}}</view>
+    </view>
+    <!--结尾-->
+    <view class="noResponse">
+      您的建议，就是我们不懈努力的动力！
+    </view>
+  </view>
+</view>

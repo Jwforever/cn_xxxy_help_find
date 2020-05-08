@@ -1,0 +1,22 @@
+<!--pages/user--info/index.wxml-->
+<import src="../../../templates/navigation/navigation.wxml" />
+<template is="navigationStyle" data="{{...navigation}}"></template>
+
+
+<view class="page">
+    <mp-cells>
+        <mp-cell hover value="学号" footer="{{info.s_number}}"> </mp-cell>
+        <mp-cell hover value="姓名" footer="{{info.s_name}}"> </mp-cell>
+        <block wx:if="{{info.s_sex==0}}">
+          <mp-cell hover value="性别" footer="未知"> </mp-cell>
+        </block>
+        <block wx:elif="{{info.s_sex==1}}">
+          <mp-cell hover value="性别" footer="男"> </mp-cell>
+        </block>
+        <block wx:else>
+          <mp-cell hover value="性别" footer="女"> </mp-cell>
+        </block>
+        <mp-cell hover value="院系" footer="{{info.s_faculty}}"> </mp-cell>
+        <mp-cell hover value="班级" footer="{{info.s_class}}"> </mp-cell>
+    </mp-cells>
+</view>

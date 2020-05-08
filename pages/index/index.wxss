@@ -1,0 +1,174 @@
+/**index.wxss**/
+@import "../../templates/navigation/navigation.wxss";
+
+page {
+  background-color: #f6f6f6;
+}
+
+/*禁用滚动条*/
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+#page-body {
+  width: 100%;
+  overflow: auto;
+}
+
+#page-content {
+  width: 100%;
+}
+
+/*轮番图*/
+
+.carousel-banner {
+  width: 100%;
+  height: 200px;
+}
+
+.carousel-banner image {
+  width: 100%;
+  height: 100%;
+}
+
+swiper {
+  display: block;
+  height: inherit;
+}
+
+/*设置indicator-dots的位置*/
+
+.wx-swiper-dots {
+  position: relative;
+  left: unset !important;
+  right: 0;
+}
+
+.wx-swiper-dots.wx-swiper-dots-horizontal {
+  margin-bottom: -5rpx;
+}
+
+/*功能模块*/
+
+.function-zone {
+  display: flex;
+  width: 100%;
+  margin: 0;
+  padding-bottom: 10px;
+  flex-flow: row wrap; /*换行，第一行在上方*/
+  justify-content: flex-start; /*项目在主轴上的对齐方式*/
+  background-color: #fff;
+}
+
+.single-function {
+  width: 20%;
+  text-align: center;
+}
+
+.single-logo {
+  display: flex;
+  width: 100%;
+  padding: 10px 0px 0px;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-icon {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/*功能描述*/
+
+.function-description {
+  width: 100%;
+}
+
+.function-description text {
+  font-size: 13px;
+}
+
+/*新闻动态*/
+
+.news-zone {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 10px 10px;
+  box-sizing: border-box;
+}
+
+.news {
+  display: flex;
+  width: 100%;
+  padding: 10px 5px;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  border-bottom: 1px solid #888;
+}
+
+.news-title {
+  font-size: 15px;
+  color: #000;
+}
+
+.news-content {
+  display: flex;
+  width: 100%;
+  flex-flow: row nowrap;
+  overflow: hidden;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+
+.news-content image {
+  width: 113px;
+  height: 60px;
+}
+
+.news-info {
+  width: 100%;
+}
+
+.news-info text {
+  display: inline-block;
+  font-size: 11px;
+  color: #888;
+  margin-right: 10px;
+}
+
+/*上拉loading*/
+
+.news-loading {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.news-loading text {
+  font-size: 13px;
+  color: #ccc;
+}
+
+/*footer*/
+
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
+.footer text {
+  font-size: 11px;
+  color: #888;
+  padding-bottom: 10px;
+}

@@ -1,0 +1,4 @@
+<!--pages/web-view/index.wxml-->
+<import src="../../templates/navigation/navigation" />
+<template is="navigationStyle" data="{{...navigation}}" />
+<web-view src="http://www.baidu.com"></web-view>

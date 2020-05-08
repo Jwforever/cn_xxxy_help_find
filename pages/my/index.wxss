@@ -1,0 +1,73 @@
+/* pages/user-info/index.wxss */
+@import "../../templates/navigation/navigation.wxss";
+@import "../../weui.wxss";
+
+page{
+  width:100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/*信息*/
+
+.user {
+  display: flex;
+  width: 100%;
+  height: 120px;
+  background-color: #ffce58;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  overflow: hidden;
+  align-items: center;
+}
+
+.user-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 20px;
+  overflow: hidden;
+}
+
+/*用户头像*/
+
+.user-image image {
+  width: 100%;
+  height: 100%;
+}
+
+.user-info view {
+  color: black;
+}
+
+.weui-footer {
+  margin: 20px 0;
+}
+
+/**banner位置**/
+
+.banner {
+  width: 100%;
+  height: 120px;
+  padding: 10px 10px;
+  box-sizing: border-box;
+}
+
+.banner-show {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+swiper {
+  width: 100%;
+  height: 100%;
+}
+
+swiper image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}

@@ -1,0 +1,41 @@
+<!-- pages/add-address/index.wxml -->
+<import src="../../../templates/navigation/navigation.wxml" />
+<template is="navigationStyle" data="{{...navigation}}"></template>
+
+<view class="page">
+  <view class="page_hd"></view>
+  <view class="page_bd">
+    <view class="form-control">
+      <label for="address">地址：</label>
+      <input type="text" id="address" placeholder="请填写地址" bindinput="inputAddress" value="{{input.address}}" />
+    </view>
+    <view class="form-control">
+      <label for="name">联系人：</label>
+      <input type="text" id="name" placeholder="请填写联系人姓名" bindinput="inputName" value="{{input.name}}" />
+      <radio-group class="radio-group" bindchange="radioChange">
+        <radio class="radio" wx:for-items="{{sexs}}" wx:key="type" value="{{item.type}}" checked="{{item.type==input.sexType?true:false}}">
+          <text>{{item.value}}</text>
+        </radio>
+      </radio-group>
+    </view>
+    <view class="form-control">
+      <label for="phone">手机号：</label>
+      <input type="number" id="phone" placeholder="请填写联系人手机号码" maxlength="11" bindinput="inputPhone" value="{{input.phone}}" />
+    </view>
+    <view class="form-control" style="border:0">
+      <view>设为默认地址</view>
+      <view>
+        <switch color="#FFCE58" type="switch" bindchange="switchChange" checked="{{input.switchType}}" />
+      </view>
+    </view>
+    <view class="form-control">
+      <button id="save-button" bindtap="saveAddress">保存地址</button>
+      <button id="delete-button" hidden="{{showDeleteButton}}" bindtap="deleteAddress" data-addressid="{{addressId}}">
+        删除地址
+      </button>
+    </view>
+  </view>
+  <view class="page_ft">
+    <text>Copyright © 2019-2020 助寻</text>
+  </view>
+</view>

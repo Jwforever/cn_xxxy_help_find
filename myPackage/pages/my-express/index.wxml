@@ -1,0 +1,71 @@
+<!--pages/my-express/index.wxml-->
+
+<wxs src="../../../common/timeFormat.wxs" module="timeTools"></wxs>
+
+<import src="../../../templates/navigation/navigation.wxml" />
+<template is="navigationStyle" data="{{...navigation}}" />
+
+<!--功能按钮-->
+<view class="allFunctions">
+  <block wx:for="{{allFunctions}}" wx:for-index="index">
+    <button class="{{index==activeIndex?'active':'functionButton'}}" bindtap="changeSwiper" data-index="{{index}}">
+      {{item}}
+    </button>
+  </block>
+</view>
+
+<swiper style="height:{{scrollHeight}}px" bindchange="swiperChange" current="{{swiperCurrent}}">
+  <block wx:for="{{allFunctions}}">
+    <swiper-item>
+      <scroll-view scroll-y="true" style="height:{{scrollHeight}}px" id="scrollView" bind:touchstart="touch_start" bind:touchmove="touch_move" bind:touchend="touch_end">
+        <view id="page">
+
+          <view class="page-hd">
+          </view>
+
+          <view class="page-bd">
+            <block wx:for="{{pageInfo.goodsList}}" wx:for-index="index" wx:for-item="item">
+              <view class="express" bindtap="getGoodsDetail" data-id="{{item.goodsInfo.id}}">
+                <view class="express-header">
+                  <view class="publisher">
+                    <view class="publisher-image">
+                      <image src="{{userInfo.avatarUrl}}"></image>
+                    </view>
+                    <view class="publisher-info">
+                      <view class="publisher-name">{{userInfo.nickName}}</view>
+                      <view class="published-time">{{timeTools.timestampToTime(item.goodsInfo.created_time)}}</view>
+                    </view>
+                  </view>
+                  <view class="operate" catchtap="showBottomMenu" data-id="{{item.goodsInfo.id}}">
+                    <text>...</text>
+                  </view>
+                </view>
+                <view class="express-content">
+                  <view class="goods-description">{{item.goodsInfo.description}}</view>
+                  <view class="goods-images">
+                    <block wx:for="{{item.images}}" wx:for-item="imagePath">
+                      <view class="goods-image">
+                        <image src="{{basePath+imagePath}}"></image>
+                      </view>
+                    </block>
+                  </view>
+                </view>
+                <view class="express-footer">
+                </view>
+              </view>
+            </block>
+          </view>
+          <view class="goods-loading " hidden="{{goodsLoadingHide}}">
+            <text class="fa fa-spinner fa-pulse fa-fw "></text>
+            <span class="sr-only ">Loading...</span>
+            <text>正在加载更多</text>
+          </view>
+          <view class="page-ft" hidden="{{endHide}}">
+            <text>助寻：帮助寻找，共建美好</text>
+          </view>
+
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </block>
+</swiper>

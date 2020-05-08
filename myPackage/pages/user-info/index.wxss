@@ -1,0 +1,16 @@
+/* pages/user--info/index.wxss */
+
+@import "../../../templates/navigation/navigation.wxss";
+
+/*修改导航栏的颜色*/
+.nav{
+  background-color:#f6f6f6;
+}
+
+.page{
+  background-color:#fff;
+}
+
+page{
+  background-color:#f6f6f6;
+}

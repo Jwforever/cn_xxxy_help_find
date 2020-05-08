@@ -1,0 +1,63 @@
+/* pages/suggest/index.wxss */
+
+@import "../../../templates/navigation/navigation.wxss";
+
+.nav {
+  background: #fff;
+}
+
+page {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f6f6f6;
+}
+
+.page,
+.page-hd,
+.page-bd,
+.page-ft {
+  width: 100%;
+}
+
+.page-hd{
+  position: relative;
+  padding: 10px 10px 15px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+#suggestArea {
+  width: 100%;
+  height: 150px;
+}
+
+.controlSize{
+  display: inline-block;
+  position: absolute;
+  bottom:0;
+  right:10px;
+  font-size:11px;
+  color:#ccc;
+}
+
+.size-overflow{
+  color:red;
+}
+
+.page-bd{
+  background-color:#fff;
+}
+
+.page-ft{
+  margin-top:20px;
+}
+
+.submit-button{
+  width:90% !important;
+  height: 40px;
+  border-radius: 20px;
+  background-color:#108ee9;
+  color:#fff;
+}

@@ -1,0 +1,2 @@
+/* pages/notification/index.wxss */
+@import "../../templates/navigation/navigation.wxss";

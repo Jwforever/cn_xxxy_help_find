@@ -1,0 +1,70 @@
+<!--pages/goods-detail/index.wxml-->
+<wxs src="../../common/timeFormat.wxs" module="timeTools" />
+
+<!--物品详情页面-->
+<import src="../../templates/navigation/navigation.wxml" />
+<template is="navigationStyle" data="{{...navigation}}"></template>
+
+<scroll-view scroll-y="true" scroll-top="0" style="height:{{scrollHeight}}px" id="scrollView">
+  <view class="page">
+
+    <!--轮播图-->
+    <view class="page-hd">
+      <swiper indicator-dots="{{swiper.indicatorDots}}" autoplay="{{swiper.autoPlay}}" indicator-active-color="{{swiper.indicatorActiveColor}}" indicator-color="{{swiper.indicatorColor}}">
+        <block wx:for="{{images}}">
+          <swiper-item>
+            <!--图片的路径-->
+            <image src="{{basePath+item}}" bind:tap="previewImage" data-url="{{basePath+item}}"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+
+    <!--内容-->
+    <view class="page-bd">
+      <view class="goods-detail">
+        <!--物品名称-->
+        <view class="goods-nameAndShare">
+          <text class="goods-name">{{goodsInfo.name}}</text>
+          <button class="share-button fa fa-share-square-o fa-fw" open-type="share"></button>
+        </view>
+        <!--物品类型以及发布时间-->
+        <view class="goods-timeAndType">
+          <text>类型:{{goodsInfo.category}}</text>
+          <text>时间:{{timeTools.timestampToTime(goodsInfo.created_time)}}</text>
+        </view>
+        <!--物品描述-->
+        <view class="goods-description">
+          <view class="description-title">
+            物品特征描述
+          </view>
+          <view class="description-content">
+            {{goodsInfo.description}}
+          </view>
+          <!--物品评价-->
+          <view class="goods-assessment">
+            <view class="assessment-title">
+              相关评价
+            </view>
+            <view class="assessment-content">
+              暂时没有相关评价！
+            </view>
+          </view>
+          <!--占位置-->
+          <view class="blank">
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+<!--按钮区域-->
+<view class="end-zone">
+  <block wx:if="{{goodsInfo.type==1}}">
+    <button class="ft-content" data-id="{{goodsInfo.id}}"> 我要认领</button>
+  </block>
+  <block wx:elif="{{goodsInfo.type==2}}">
+    <button class="ft-content" data-id="{{goodsInfo.id}}"> 我已找到</button>
+  </block>
+</view>

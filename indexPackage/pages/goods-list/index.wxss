@@ -1,0 +1,188 @@
+/* pages/goods-list/index.wxss */
+@import "../../../templates/navigation/navigation.wxss";
+
+page {
+  width: 100%;
+  height: 100%;
+  background-color: #f6f6f6;
+  margin: 0;
+  padding: 0;
+}
+
+/**顶部固定的搜索框*/
+
+.searchBar {
+  position: absolute;
+  width: 100%;
+  height: 48px;
+  left: 0;
+  z-index: 999; /*最上层*/
+}
+
+/*搜索结果展示*/
+.weui-cells__group{
+  background-color:white;
+}
+
+.all{
+  position: relative;
+  width:100%;
+}
+
+#scrollView {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#page {
+  display: flex;
+  flex-flow: column wrap;
+  width: 100%;
+}
+
+/*页面头部*/
+
+.page-header {
+  width: 100%;
+  height: 48px;
+}
+
+.page-content{
+  display: flex;
+  width:100%;
+  flex-flow: column wrap;
+}
+
+/*商品列表*/
+
+.goods-list {
+  display: flex;
+  width: 100%;
+  padding: 0 8px;
+  box-sizing: border-box;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: #f6f6f6;
+}
+
+.goods {
+  width: 50%;
+  height: 350px;
+  background-color: #fff;
+  border: 5px solid #f6f6f6;
+  box-sizing: border-box;
+}
+
+/*奇数左边的边框设置为0*/
+
+.goods:nth-child(odd) {
+  border-left: 0px;
+}
+
+/*偶数右边的边框设置为0*/
+
+.goods:nth-child(even) {
+  border-right: 0px;
+}
+
+.goods-image {
+  width: 100%;
+  height: 230px;
+  overflow: hidden;
+}
+
+.goods-image image{
+  width:100%;
+  height:100%;
+}
+
+.goods-name {
+  display: flex;
+  width: 100%;
+  height: 42px;
+  flex-direction: row nowrap;
+  padding: 0 5px;
+  color: orangered;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/*最多显示两行描述*/
+
+.goods-description {
+  width: 100%;
+  height: 33.5px;
+  color: #ccc;
+  font-size: 11px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  box-sizing: border-box;
+  padding: 0 5px;
+  margin: 5px 0;
+}
+
+.goods-time {
+  display: flex;
+  width: 100%;
+  padding: 0 5px;
+  font-size: 11px;
+  color: #ccc;
+}
+
+/*上拉loading*/
+
+.goods-loading {
+  margin: 10px 0;
+  display: flex;
+  width: 100%;
+  height:20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.goods-loading text {
+  font-size: 13px;
+  color: #ccc;
+}
+
+/*footer*/
+
+.footer {
+  width: 100%;
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer text {
+  font-size: 11px;
+  color: #888;
+  padding-bottom: 10px;
+}
+
+
+/**加载**/
+.loading{
+  position: absolute;
+  display: flex;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  align-items: flex-start;
+}
+
+.loading view{
+  padding-top:70px;
+  width:100%;
+  text-align: center;
+  font-size:13px;
+  color:black;
+}

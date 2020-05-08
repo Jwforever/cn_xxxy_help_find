@@ -1,0 +1,23 @@
+<!---顶部导航栏模板-->
+
+<template name="navigationStyle">
+  <view class='nav' style='height:{{navHeight}}px'>
+    <view class='nav-title'>
+      <block wx:if="{{arrowLeft}}">
+        <!--返回按钮-->
+        <view class="arrow-left" bindtap="back">
+          <text class="fa fa-angle-left fa-2x"></text>
+        </view>
+        <text class="prompt">{{navTitle}}</text>
+      </block>
+      <block wx:else>
+        <text class="nav-brand">{{navTitle}}</text>
+      </block>
+      <!---Loading图标-->
+      <view class="loading" hidden="{{loadingHide}}">
+        <text class="fa fa-spinner fa-spin fa-fw"></text>
+        <view class="sr-only">Loading...</view>
+      </view>
+    </view>
+  </view>
+</template>

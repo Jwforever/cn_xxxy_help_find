@@ -1,0 +1,31 @@
+<!-- pages/my-address/index.wxml -->
+<import src="../../../templates/navigation/navigation" />
+<template is="navigationStyle" data="{{...navigation}}"></template>
+
+<view class="page">
+  <!-- 头部 -->
+  <view class="page_hd"></view>
+  <!-- 内容 -->
+  <view class="page_bd">
+    <scroll-view scroll-y="true" style="height:{{scrollHeight-40}}px">
+      <view class="info" wx:for="{{address}}">
+        <view class="info-left">
+          <view class="address">{{item.address}}</view>
+          <view class="my-info">
+            <view class="name">{{item.name}}</view>
+            <view class="sex">{{item.sex==0?"未知":(item.sex==1?"男":"女")}}</view>
+            <view class="phone">{{item.phone}}</view>
+          </view>
+        </view>
+        <view class="info-right" bindtap="editAddress" data-id="{{item.id}}">
+          <text class="fa fa-pencil-square-o"></text>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 底部 -->
+  <view class="page_ft" bindtap="addNewAddress">
+    <text class="fa fa-plus-circle fa-fw" id="add-logo"></text>
+    <text>新增地址</text>
+  </view>
+</view>

@@ -1,0 +1,147 @@
+/* pages/goods-detail/index.wxss */
+@import "../../templates/navigation/navigation.wxss";
+
+page {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#scrollView {
+  width: 100%;
+}
+
+/*scrollView内容*/
+
+.page {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.page-hd {
+  width: 100%;
+  height: 50%;
+}
+
+/*轮播图配置*/
+
+swiper {
+  width: 100%;
+  height: 100%;
+}
+
+swiper image {
+  width: 100%;
+  height: 100%;
+}
+
+/*内容*/
+
+.page-bd {
+  width: 100%;
+  height: 50%;
+  margin: 0;
+  padding: 0;
+}
+
+.goods-detail {
+  display: flex;
+  width: 100%;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.goods-nameAndShare {
+  display: flex;
+  width: 100%;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px 0px;
+  box-sizing: border-box;
+}
+
+.goods-name{
+  display: inline-block;
+}
+
+.share-button{
+  width:auto !important;
+  min-height: 0px !important;
+  height: auto !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:0;
+  border-radius: 0%;
+  background-color: transparent;
+}
+
+.goods-timeAndType {
+  display: flex;
+  width: 100%;
+  margin: 5px 0px 10px;
+  padding: 0px 10px;
+  box-sizing: border-box;
+  flex-flow: row nowrap;
+  align-content: center;
+  justify-content: flex-start;
+}
+
+.goods-timeAndType text {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 11px;
+  color: #ccc;
+}
+
+.goods-description, .goods-assessment {
+  width: 100%;
+  padding-top: 10px;
+  box-sizing: border-box;
+  background-color: #f6f6f6;
+}
+
+.assessment-title, .assessment-content, .description-title, .description-content {
+  width: 100%;
+  padding: 10px 10px;
+  background-color: #fff;
+  font-size: 13px;
+  box-sizing: border-box;
+}
+
+.assessment-title, .description-title {
+  font-size: 15px;
+  border-bottom: 1px solid #f6f6f6;
+}
+
+/*占位置专用*/
+.blank{
+  width:100%;
+  height:60px;
+}
+
+/*最后*/
+
+.end-zone {
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  bottom: 10px;
+  left: 0;
+}
+
+.ft-content {
+  margin: 0 auto;
+  width: 90% !important;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #ffce58;
+  text-align: center;
+}
+

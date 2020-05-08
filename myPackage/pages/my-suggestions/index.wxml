@@ -1,0 +1,43 @@
+<!--pages/my-suggestions/index.wxml-->
+
+<wxs src="../../../common/timeFormat.wxs" module="timeTools"></wxs>
+
+<import src="../../../templates/navigation/navigation.wxml" />
+<template is="navigationStyle" data="{{...navigation}}"></template>
+
+<view class="page" style="height:{{pageHeight}}px">
+	<view class="page-hd">
+		<view class="my-info">
+			<view class="info-image">
+				<image src="{{user.userImage}}"></image>
+			</view>
+			<view class="info-name">{{user.nickName}}</view>
+		</view>
+		<view class="slogan">帮助寻找，共建美好</view>
+	</view>
+	<view class="page-bd">
+		<view class="functions">
+			<block wx:for="{{functions}}" wx:key="functionName">
+				<view class="function {{item.isActive?'active':''}}" bind:tap="changeContent" data-index="{{index}}">
+					{{item.functionName}} {{item.size}}
+				</view>
+			</block>
+		</view>
+		<!--建议列表-->
+		<view class="suggestion-list" wx:for="{{list}}">
+			<view class="suggestion" bindtap="getDetail" data-id="{{item.id}}">
+        <view class="content">
+        {{item.suggestion}}
+        </view>
+        <view class="created-time">{{timeTools. timestampToTime(item.createdTime)}}</view>
+			</view>
+		</view>
+	</view>
+	<view class="page-ft"></view>
+</view>
+
+
+<!--发表建议-->
+<view class="editNewSuggestion" bind:tap="edit">
+	<text class="fa fa-plus"></text>
+</view>

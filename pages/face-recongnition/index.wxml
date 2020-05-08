@@ -1,0 +1,12 @@
+<!--pages/face-recongnition/index.wxml-->
+<import src="../../templates/navigation/navigation.wxml" />
+<template is="navigationStyle" data="{{...navigation}}" />
+
+<view class="page" style="height:{{height}}px">
+  <view class="page-hd">
+    <camera device-position="front" mode="normal"></camera>
+  </view>
+  <view class="page-bd" hidden="{{isButtonHide}}">
+    <button id="authorizeButton" bindtap="openSetting">相机授权</button>
+  </view>
+</view>

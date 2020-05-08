@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "mp-uploader": "../components/uploader/uploader",
+    "mp-cells": "../components/cells/cells",
+    "mp-cell": "../components/cell/cell"
+  },
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#fff"
+}

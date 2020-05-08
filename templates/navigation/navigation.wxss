@@ -1,0 +1,58 @@
+/* 自定义顶部栏高度 */
+.nav{
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color:#FFCE58;
+}
+
+.nav-title{
+  display: flex;
+  width: 100%;
+  height: 45px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  letter-spacing:2px;
+  box-sizing: border-box;
+  flex-flow:row nowrap;
+  align-items:center;
+}
+
+/*返回箭头*/
+.arrow-left{
+  display: flex;
+  width:40px;
+  height:100%;
+  justify-content: center;
+  align-items:center;
+}
+
+.arrow-left:hover{
+  background-color:rgba(172, 169, 169, 0.5);
+}
+
+.prompt{
+  color:#000;
+  font-size:17px;
+}
+
+.nav-brand{
+  display: inline-block;
+  padding-left:10px;
+  font-size:36rpx;
+  color:#000;
+}
+.loading{
+  display:flex;
+  width:30px;
+  height:100%;
+  justify-content: center;
+  align-items: center;
+  font-size:23px;
+  color:#fff;
+}

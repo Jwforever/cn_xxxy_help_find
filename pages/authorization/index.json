@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "mp-dialog": "../../components/dialog/dialog"
+  },
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#fff"
+}

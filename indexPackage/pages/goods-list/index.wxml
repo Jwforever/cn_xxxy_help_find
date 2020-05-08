@@ -1,0 +1,50 @@
+<!--pages/goods-list/index.wxml-->
+
+<wxs src="../../../common/timeFormat.wxs" module="timeTools" />
+
+<import src="../../../templates/navigation/navigation.wxml" />
+<template is="navigationStyle" data="{{...navigation}}"></template>
+
+<view class="searchBar" style="top:{{navigation.navHeight}}px">
+  <mp-searchbar bindselectresult="selectResult" search="{{search}}" bindconfirm="inputConfirm"></mp-searchbar>
+</view>
+
+<view class="all" style="height:{{scrollHeight}}px">
+  <scroll-view id="scrollView" scroll-y="true" style="height:{{scrollHeight}}px" bind:touchstart="touch_start" bind:touchmove="touch_move" bind:touchend="touch_end">
+    <view id="page">
+      <view class="page-header">
+      </view>
+
+
+      <!--页面内容-->
+      <view id="page-content">
+        <view class="goods-list">
+          <block wx:for="{{pageInfo.goodsList}}" wx:key="id">
+            <view class=" goods " bindtap="getGoodsDetail" data-id="{{item.goodsInfo.id}}">
+              <view class="goods-image ">
+                <image src="{{basePath+item.images[0]}}"></image>
+              </view>
+              <view class="goods-name ">{{item.goodsInfo.name}}</view>
+              <view class="goods-description ">{{item.goodsInfo.description}}</view>
+              <view class="goods-time ">{{timeTools. timestampToTime(item.goodsInfo.created_time)}}</view>
+            </view>
+          </block>
+        </view>
+        <view class="goods-loading" hidden="{{goodsLoading}}">
+          <text class="fa fa-spinner fa-pulse fa-fw"></text>
+          <span class="sr-only">Loading...</span>
+          <text>加载更多信息</text>
+        </view>
+      </view>
+
+      <view class="footer " hidden="{{goodsFooter}}">
+        <text>助寻：帮助寻找，共建美好</text>
+      </view>
+
+    </view>
+  </scroll-view>
+  <!--是否加载-->
+  <view class="loading" hidden="{{isLoadingHide}}">
+    <view>加载中...</view>
+  </view>
+</view>

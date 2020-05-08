@@ -1,0 +1,26 @@
+<!--pages/suggest/index.wxml-->
+<import src="../../../templates/navigation/navigation.wxml" />
+<template is="navigationStyle" data="{{...navigation}}"></template>
+
+<view class="page" style="height:{{pageHeight}}px">
+
+	<!--填写建议-->
+	<view class="page-hd">
+		<textarea placeholder="您的建议是我们动力，尽情抒写吧！" id="suggestArea" bind:input="inputCheck" maxlength="500"></textarea>
+		<text class="controlSize {{nowSize>=200?'size-overflow':''}}">{{nowSize}}/200</text>
+	</view>
+
+	<!--图片上传-->
+	<view class="page-bd">
+		<mp-cells>
+			<mp-cell>
+				<mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}" binddelete="deleteImage" upload="{{uplaodFile}}" files="{{files}}" max-count="6" title="图片上传"></mp-uploader>
+			</mp-cell>
+		</mp-cells>
+	</view>
+
+	<!--提交按钮-->
+	<view class="page-ft">
+    <button class="submit-button" disabled="{{handInDisabled}}" bindtap="submitSuggestion">提交</button>
+	</view>
+</view>

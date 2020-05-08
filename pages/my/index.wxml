@@ -1,0 +1,62 @@
+<import src="../../templates/navigation/navigation" />
+<template is="navigationStyle" data="{{...navigation}}" />
+
+
+<view class="page">
+  <!--用户信息-->
+  <view class="page__hd">
+    <view class="user">
+      <!---登录过了-->
+      <block wx:if="{{sessionId!=null}}">
+        <view class="user-image">
+          <image src="{{userInfo.userImage}}" />
+        </view>
+        <view class="user-info">
+          <view class="nickName">{{userInfo.nickName}}</view>
+          <view>帮您寻找，共建美好</view>
+        </view>
+      </block>
+      <!---没有登录-->
+      <block wx:else>
+        <view class="user-image">
+          <image src="{{userInfo.noUser}}" />
+        </view>
+        <view class="user-info">
+          <view bindtap="login">授权/绑定</view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <!--用户信息end-->
+
+  <scroll-view style="height:{{height-120}}px" scroll-y="true">
+    <view class="page__bd ">
+      <!--预留广告banner位置
+      <view class="banner">
+        <view class="banner-show">
+          <swiper indicator-dots="{{swiper.indicatorDots}}" autoplay="{{swiper.autoPlay}}" indicator-color="{{swiper.indicatorColor}}" indicator-active-color="{{swiper.indicatorActiveColor}}">
+            <swiper-item>
+              <image src="http://www.xxu.edu.cn/js/kjyq.jpg"></image>
+            </swiper-item>
+            <swiper-item>
+              <image src="http://www.xxu.edu.cn/js/kjyq.jpg"></image>
+            </swiper-item>
+          </swiper>
+        </view>
+      </view>-->
+      <!--功能列表-->
+      <mp-cells>
+        <block wx:for="{{menuList}}" wx:for-item="menuItem" wx:key="value">
+          <mp-cell link bindtap="checkStatus" data-url="{{menuItem.url}}" value="{{menuItem.value}}">
+            <image slot="icon" src="{{menuItem.icon}} " style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px; "></image>
+          </mp-cell>
+        </block>
+      </mp-cells>
+
+      <view class="weui-footer ">
+        <view class="weui-footer__text ">Copyright © 2019-2020 助寻</view>
+      </view>
+    </view>
+    <!--body结束-->
+  </scroll-view>
+</view>

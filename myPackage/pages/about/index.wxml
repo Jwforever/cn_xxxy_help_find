@@ -1,0 +1,26 @@
+<!--pages/about/index.wxml-->
+
+<import src="../../../templates/navigation/navigation.wxml" />
+
+<template is="navigationStyle" data="{{...navigation}}"></template>
+
+<view class="page" style="height:{{height}}px">
+  <!--我们的logo位置-->
+  <view class="page-hd">
+    <view class="logo">
+      <image src="../../../images/logo.png"></image>
+    </view>
+  </view>
+
+  <!--我们的简介-->
+  <view class="page-bd">
+    <view class="app-name">助寻</view>
+    <view class="our-description">
+      <rich-text nodes="{{nodes}}"></rich-text>
+    </view>
+  </view>
+
+  <view class="page-ft">
+    <view>Copyright © 2019-2020 助寻</view>
+  </view>
+</view>

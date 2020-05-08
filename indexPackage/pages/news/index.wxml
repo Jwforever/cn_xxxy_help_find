@@ -1,0 +1,29 @@
+<!--pages/news/index.wxml-->
+
+<import src="../../../templates/navigation/navigation.wxml" />
+<template is="navigationStyle" data="{{...navigation}}"></template>
+
+<!--时间戳转化工具-->
+<wxs src="../../../common/timeFormat.wxs" module="tools" />
+
+<view class="page">
+
+  <view class="page-header">
+    <!--新闻标题-->
+    <view class="news-title">
+      {{news.newsTitle}}
+    </view>
+    <!--新闻的详情信息-->
+    <view class="news-info">
+      <text>{{tools.timestampToTime(news.createdTime)}}</text>
+      <text>{{news.author}}</text>
+      <text>{{news.clicks}}次阅读量</text>
+    </view>
+  </view>
+
+  <!--新闻内容-->
+  <view class="page-body">
+    <towxml nodes="{{article}}" />
+  </view>
+
+</view>

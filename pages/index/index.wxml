@@ -1,0 +1,80 @@
+<!--index.wxml-->
+<import src="../../templates/navigation/navigation.wxml" />
+<template is="navigationStyle" data="{{...navigation}}" />
+
+<wxs src="../../common/timeFormat.wxs" module="tools" />
+
+<view class="page">
+
+  <!--内容-->
+  <scroll-view id="page-body" scroll-y="true" style="height:{{scrollHeight}}px" scroll-top="{{scrollTop}}" bind:touchstart="touch_start" bind:touchend="touch_end" bind:touchmove="touch_move">
+    <view id="page-content">
+      <!---轮番图-->
+      <view class="carousel-banner">
+        <swiper autoplay="{{autoplay}}" indicator-dots="{{indicatorDots}}" indicator-color="rgba(255,255,255,1)" indicator-active-color="#FFCE58">
+          <block wx:for="{{bannerLinks}}">
+            <swiper-item>
+              <image src="{{item}}"></image>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+      <!--轮番图end-->
+
+      <!--功能某块-->
+      <view class="function-zone">
+
+        <block wx:for="{{functions}}" wx:key="functionName">
+          <view class="single-function" bindtap="toNewPage" data-flag="{{index+1}}">
+            <view class="single-logo">
+              <view class="logo-icon" style="background-image:{{item.backgroundImage}}">
+              <!--icon大小最好是40*40居中-->
+                <text class="fa {{item.icon}}" style="color:{{item.textColor}}"></text>
+              </view>
+            </view>
+            <view class="function-description">
+              <text>{{item.functionName}}</text>
+            </view>
+          </view>
+        </block>
+
+      </view>
+      <!---功能模块end-->
+
+      <!--新闻模块-->
+      <view class="news-zone">
+
+        <block wx:for="{{newsData}}" wx:for-item="item" wx:key="id">
+          <view class="news" bindtap="readNewsDetail" data-news_id="{{item.news.id}}">
+            <text class="news-title">{{item.news.news_name}}</text>
+            <view class="news-content">
+              <image src="{{url+item.path01}}" mode="aspectFill"></image>
+              <image src="{{url+item.path02}}" mode="aspectFill"></image>
+              <image src="{{url+item.path03}}" mode="aspectFill"></image>
+            </view>
+
+            <!--news信息（发布时间，作者，阅读量）-->
+            <view class="news-info">
+              <text>{{tools.timestampToTime(item.news.created_time)}}</text>
+              <text>{{item.news.author}}</text>
+            </view>
+          </view>
+        </block>
+
+      </view>
+      <!--动态模块end-->
+
+      <view class="news-loading" hidden="{{newsLoading}}">
+        <text class="fa fa-spinner fa-pulse fa-fw"></text>
+        <span class="sr-only">Loading...</span>
+        <text>加载更多</text>
+      </view>
+
+      <view class="footer" hidden="{{newsFooter}}">
+        <text>助寻：帮助寻找，共建美好</text>
+      </view>
+
+    </view>
+  </scroll-view>
+
+</view>

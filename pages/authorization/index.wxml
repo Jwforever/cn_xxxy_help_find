@@ -1,0 +1,25 @@
+<!--pages/authorization/index.wxml-->
+<import src="../../templates/navigation/navigation.wxml" />
+<template is="navigationStyle" data="{{...navigation}}"></template>
+
+<view class="page" style="height:{{height/1.5}}px">
+  <view class="page-hd">
+  </view>
+
+  <view class="page-bd">
+    <view class="logo">
+      <image src="../../images/logo.png"></image>
+    </view>
+    <view class="tip">请完成微信授权以继续使用</view>
+    <view class="btn-area">
+      <button class="btn" style="  width:90%;" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">微信授权用户信息</button>
+    </view>
+  </view>
+
+  <view class="page-ft">
+  </view>
+</view>
+
+<mp-dialog title="提示" show="{{showOneButtonDialog}}" buttons="{{oneButton}}" bindbuttontap="tapDialogButton">
+  <view>需要通过授权才能继续，请重新点击的授权</view>
+</mp-dialog>

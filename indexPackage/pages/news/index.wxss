@@ -1,0 +1,48 @@
+/* pages/news/index.wxss */
+
+@import "../../../templates/navigation/navigation.wxss";
+
+page{
+  background-color:#fff;
+}
+
+.page{
+  width:100%;
+  height: 100%;
+}
+
+.page-header{
+  width:100%;
+  box-sizing: border-box;
+  padding:0 15px;
+}
+
+.news-title{
+  display: flex;
+  width:100%;
+  padding:10px 0;
+  flex-flow:row wrap;
+  font-size:19px;
+  color:#000;
+  box-sizing:border-box;
+}
+
+.news-info{
+  display: flex;
+  width:100%;
+  flex-direction: row wrap;
+}
+
+.news-info text{
+  display: inline-block;
+  color:#ccc;
+  font-size:11px;
+  margin-right:10px;
+}
+
+.page-body{
+  width:100%;
+}
+
+/*文章末尾*/
+
